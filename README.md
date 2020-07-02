@@ -5,13 +5,13 @@ Hey and welcome to Python-Django project. The main intension of this project is 
 
 Technologies used:
 
-Python 3.6
-Django 3.0
-HTML5
-CSS3
-Bootstrap
-JavaScript
-SQLite
+Python 3.6,
+Django 3.0,
+HTML5,
+CSS3,
+Bootstrap,
+JavaScript,
+SQLite.
 
 
 
