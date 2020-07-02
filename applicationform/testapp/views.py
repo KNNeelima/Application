@@ -20,15 +20,7 @@ def rg1_view(request):
             print("Data is inserting into the table")
             return Thanks_view(request)
     return render(request,'testapp/rg.html',{'form':form})
-# def rg_view(request):
-#     form=ApplicatonForm()
-#     if request.method=="POST":
-#         form=ApplicatonForm(request.POST)
-#         if form.is_valid():
-#             form.save(commit=True)
-#             print("Data is going to table")
-#             return index_view(request)
-#     return render(request,'testapp/rg.html',{'form':form})
+
 
 def Thanks_view(request):
     return render(request,'testapp/Thanks.html')
