@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/table.css" %}">
+  </head>
+  <body>
+    <h1 align = "center">Applicant Information</h1>
+    <hr>
+    {% if application_list %}
+    <table align="center">
+      <thead>
+      <th>Name Of The Student</th>
+      <th>Father Name</th>
+      <th>Mother Name</th>
+      <th>Date Of Birth</th>
+      <th>Email address</th>
+      <th>Phone Number</th>
+      <th>SSC Marks</th>
+      <th>School Name</th>
+      <th>Inter Marks</th>
+      <th>College Name</th>
+      <th>State</th>
+      <th>District</th>
+      <th>Address</th>
+      <th>Pincode</th>
+      </thead>
+      {% for applications in application_list %}
+      <tr>
+        <td>{{applications.Name}}</td>
+        <td>{{applications.FatherName}}</td>
+        <td>{{applications.MotherName}}</td>
+        <td>{{applications.DOB}}</td>
+        <td>{{applications.Email}}</td>
+        <td>{{applications.MobileNo}}</td>
+        <td>{{applications.SSCMarks}}</td>
+        <td>{{applications.NameOfTheSchool}}</td>
+        <td>{{applications.InterMarks}}</td>
+        <td>{{applications.NameOfTheCollege}}</td>
+        <td>{{applications.State}}</td>
+        <td>{{applications.Dist}}</td>
+        <td>{{applications.Address}}</td>
+        <td>{{applications.Pincode}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    {% else %}
+    <p align="center">No Applications Found</p>
+    {%endif%}
+  </body>
+</html>

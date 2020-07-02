@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "css/fr.css"%}">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">University</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/index">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 id="tx">Your Application successfully submitted</h2>
+      <p id ="test">To proceed further you need to take online test. If yes click below.</p>
+      <button class="button" type="button" onclick="myFunction()">I am interested</button>
+    </div>
+    <script>
+    function myFunction() {
+      alert("Thank you for your interest! You will receive a mail for online exam.  ");
+}
+</script>
+  </body>
+</html>
