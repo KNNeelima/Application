@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 my_validator = RegexValidator(r"^[A-Z][a-z]*", "First Letter should be Upper case.")
 
-
+#Application Form
 class ApplicatonForm(forms.ModelForm):
     error_css_class = "error"
     Name =forms.CharField(widget=forms.TextInput(attrs={'class':'input-md form-control','style':'width:500px','placeholder':'Enter Name'}),validators=[my_validator])
@@ -27,20 +27,21 @@ class ApplicatonForm(forms.ModelForm):
         model=AppForm
         fields='__all__'
 
+     #Validating Name Column
     def clean_Name(self, *args, **kwargs):
         Name=self.cleaned_data.get("Name")
         if len(Name)<2:
             raise forms.ValidationError("Not valid")
         else:
             return Name
-
+    #Validating Mobile Number Column
     def clean_MobileNo(self,*args, **kwargs):
         MobileNo=self.cleaned_data.get("MobileNo")
         if len(MobileNo)<9:
             raise forms.ValidationError("Not a valid number")
         else:
             return MobileNo
-
+    #Validating Pincode Column
     def clean_Pincode(self,*args,**kwargs):
         Pincode=self.cleaned_data.get("Pincode")
         if len(Pincode)<6:
@@ -49,7 +50,7 @@ class ApplicatonForm(forms.ModelForm):
             return Pincode
 
 
-
+# Sign-up Form
 class SignUpForm(forms.ModelForm):
     username =forms.CharField(widget=forms.TextInput(attrs={'class':'input-md form-control','style':'width:500px','placeholder':'Enter Name'}))
     password =forms.CharField(widget=forms.PasswordInput(attrs={'class':'input-md form-control','style':'width:500px','placeholder':'Password'}))
